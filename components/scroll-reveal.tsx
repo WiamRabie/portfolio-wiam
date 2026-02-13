@@ -1,7 +1,7 @@
 "use client"
 
-import { type ReactNode, useRef } from "react"
-import { motion, useInView } from "framer-motion"
+import React, { type ReactNode, useRef } from "react"
+import { motion, useInView, useReducedMotion } from "framer-motion"
 
 interface ScrollRevealProps {
   children: ReactNode
@@ -16,30 +16,40 @@ export function ScrollReveal({
   delay = 0,
   direction = "up",
 }: ScrollRevealProps) {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-60px" })
+  const ref = useRef<HTMLDivElement | null>(null)
+  const reduceMotion = useReducedMotion()
+
+  // IMPORTANT: un margin trop agressif peut retarder le "in view" sur mobile
+  const isInView = useInView(ref, { once: true, margin: "-20px" })
+
+  // On évite l'écran vide au chargement (mobile hydration)
+  const [mounted, setMounted] = React.useState(false)
+  React.useEffect(() => setMounted(true), [])
 
   const directionOffset = {
-    up: { y: 40, x: 0 },
-    down: { y: -40, x: 0 },
-    left: { x: 40, y: 0 },
-    right: { x: -40, y: 0 },
+    up: { y: 26, x: 0 },
+    down: { y: -26, x: 0 },
+    left: { x: 26, y: 0 },
+    right: { x: -26, y: 0 },
+  } as const
+
+  // SAFE: avant montage (ou si reduce motion), on affiche le contenu direct
+  if (!mounted || reduceMotion) {
+    return <div className={className}>{children}</div>
   }
 
   return (
     <motion.div
       ref={ref}
-      initial={{
-        opacity: 0,
-        ...directionOffset[direction],
-      }}
+      // SAFE: si pas encore inView, on garde le contenu visible (opacity 1)
+      initial={{ opacity: 1, x: 0, y: 0 }}
       animate={
         isInView
           ? { opacity: 1, x: 0, y: 0 }
-          : { opacity: 0, ...directionOffset[direction] }
+          : { opacity: 1, ...directionOffset[direction] }
       }
       transition={{
-        duration: 0.6,
+        duration: 0.55,
         delay,
         ease: "easeOut",
       }}
