@@ -33,7 +33,7 @@ const interests = [
 ]
 
 const stats = [
-  { target: 6, suffix: "+", label: "Projects" },
+  { target: 10, suffix: "+", label: "Projects" },
   { target: 5, suffix: "+", label: "Years Learning" },
   { target: 5, suffix: "", label: "Tech Domains" },
   { target: 4, suffix: "", label: "Languages" },
@@ -127,7 +127,7 @@ export function About() {
               <div className="mb-6 flex items-start gap-6">
                 <TiltPhoto />
                 <p className="leading-relaxed text-muted-foreground">
-                  {"I'm a Digital Engineering and Artificial Intelligence student with a deep curiosity for how technology can solve real-world problems. From medical image segmentation to building intelligent chatbots, I thrive at the intersection of innovation and impact. My work blends rigorous engineering with a creative eye for design and user experience."}
+                  {"I'm a Digital Engineering and AI engineer with solid foundations in Machine Learning and Deep Learning, specialized in applied generative AI — RAG pipelines, AI agents, and LLM systems in production. I'm currently contributing to Wineo CX at Wineo AI, involved end-to-end: AI voice agent, frontend, and backend. My work blends rigorous engineering with a creative eye for design and user experience."}
                 </p>
               </div>
             </ScrollReveal>

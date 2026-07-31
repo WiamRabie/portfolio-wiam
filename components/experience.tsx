@@ -6,40 +6,49 @@ import { GraduationCap, Briefcase, Cpu } from "lucide-react"
 
 const timeline = [
   {
-    year: "2023 – 2026",
-    title: "Digital Engineering & Artificial Intelligence",
-    subtitle: "Engineering Degree",
+    year: "Mars 2026 – Juil. 2026",
+    title: "AI Engineer Intern — Wineo AI",
+    subtitle: "Wineo CX · Multi-tenant SaaS platform",
     description:
-      "Engineering program focused on AI, machine learning, data science, and modern software development.",
-    icon: Cpu,
+      "AI voice agent (Gemini, RAG pipeline), frontend (conversations dashboard, tenant config), backend (WhatsApp/SMS/email APIs, Twilio, MongoDB).",
+    icon: Briefcase,
     color: "primary",
   },
   {
-    year: "2025",
-    title: "Internship — SkyBot",
-    subtitle: "RAG AI Assistant System",
+    year: "Juin 2025 – Août 2025",
+    title: "AI / RAG Engineer Intern — SITA",
+    subtitle: "SkyBot · Internal RAG assistant",
     description:
-      "Built a Retrieval-Augmented Generation (RAG) assistant combining document retrieval and LLMs through a backend API.",
+      "Retrieval-Augmented Generation pipeline (FAISS, LLaMA), FastAPI REST API, adopted internally by business teams.",
     icon: Briefcase,
     color: "accent",
   },
   {
-    year: "2024",
-    title: "Internship — GD Scan",
-    subtitle: "Corporate Website Development",
+    year: "Juil. 2024",
+    title: "Web Development Intern — GD Scan",
+    subtitle: "Corporate website & employee portal",
     description:
-      "Designed and developed a corporate website with a focus on clean UI structure, responsiveness, and usability.",
+      "Responsive corporate site and employee management interface (HTML, CSS, JavaScript).",
     icon: Briefcase,
     color: "secondary",
   },
   {
-    year: "2020",
+    year: "2023 – 2026",
+    title: "Digital Engineering & Artificial Intelligence in Health",
+    subtitle: "Engineering Degree",
+    description:
+      "Engineering program focused on AI, machine learning, deep learning, and production software systems.",
+    icon: Cpu,
+    color: "primary",
+  },
+  {
+    year: "2019",
     title: "Baccalaureate — Mathematics B",
-    subtitle: "Scientific Track",
+    subtitle: "Scientific track, French option",
     description:
       "Strong foundation in mathematics, logic, and analytical thinking.",
     icon: GraduationCap,
-    color: "primary",
+    color: "secondary",
   },
 ]
 

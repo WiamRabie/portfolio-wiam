@@ -14,6 +14,9 @@ import {
   ShieldAlert,
   Stethoscope,
   Building2,
+  PlaneTakeoff,
+  BarChart3,
+  Activity,
 } from "lucide-react"
 
 type Project = {
@@ -79,6 +82,30 @@ const projects: Project[] = [
     tags: ["Python", "Pandas", "scikit-learn", "Anomaly Detection"],
     icon: ShieldAlert,
     accent: "secondary",
+  },
+  {
+    title: "Flight Delay Prediction",
+    description:
+      "Exploratory analysis, feature engineering, and supervised modeling to predict flight delays, with comparison and interpretation of model performance.",
+    tags: ["Python", "scikit-learn", "Pandas", "Feature Engineering"],
+    icon: PlaneTakeoff,
+    accent: "primary",
+  },
+  {
+    title: "BI & Decision Analytics Pipeline",
+    description:
+      "ETL pipeline design with analytical KPIs and Power BI dashboards to support data-driven decision making.",
+    tags: ["ETL", "SQL", "Power BI", "Data Pipelines"],
+    icon: BarChart3,
+    accent: "secondary",
+  },
+  {
+    title: "Soukar-E — Glucose Tracking App",
+    description:
+      "Full-stack blood glucose tracking app: JWT authentication, client-side OCR to read glucometer values from a photo (no image sent to the server), OpenAI-based glycemic risk analysis with an offline rule-engine fallback, dashboards, and PDF export.",
+    tags: ["Next.js", "TypeScript", "Flask", "PostgreSQL", "OpenAI API", "Docker"],
+    icon: Activity,
+    accent: "accent",
   },
   {
     title: "Healthcare AI (Grouped Projects)",

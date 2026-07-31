@@ -89,7 +89,10 @@ export function Contact() {
           <div className="lg:col-span-3">
             <ScrollReveal delay={0.1}>
               <form
-                onSubmit={(e) => e.preventDefault()}
+                onSubmit={(e) => {
+                  e.preventDefault()
+                  window.location.href = mailtoHref
+                }}
                 className="space-y-5 rounded-xl border border-border/50 bg-card/50 p-6 backdrop-blur-sm"
               >
                 <div className="grid gap-5 sm:grid-cols-2">
@@ -162,13 +165,13 @@ export function Contact() {
                   />
                 </div>
 
-                <a
-                  href={mailtoHref}
+                <button
+                  type="submit"
                   className="inline-flex items-center gap-2 rounded-full bg-primary px-7 py-2.5 text-sm font-medium text-primary-foreground transition-all duration-300 hover:shadow-lg hover:shadow-primary/25"
                 >
                   <Send size={14} />
                   Send Message
-                </a>
+                </button>
               </form>
             </ScrollReveal>
           </div>
